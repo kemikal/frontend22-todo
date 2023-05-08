@@ -1,0 +1,25 @@
+GET http://localhost:3000/test/Pelle
+
+###
+
+GET http://localhost:3000/todo
+
+###
+
+POST http://localhost:3000/todo
+Content-Type: application/json
+
+{
+    "todo": "Användarhantering"
+}
+
+###
+
+POST http://localhost:3000/todo/done
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+###
