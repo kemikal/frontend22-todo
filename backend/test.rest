@@ -2,7 +2,14 @@ GET http://localhost:3000/test/Pelle
 
 ###
 
-GET http://localhost:3000/todo
+GET http://localhost:3000/todo/68f7216c-b9ca-496d-9850-c746459c8812
+
+
+###
+
+
+GET http://localhost:3000/todo/
+
 
 ###
 
@@ -10,7 +17,8 @@ POST http://localhost:3000/todo
 Content-Type: application/json
 
 {
-    "todo": "Användarhantering"
+    "todo": "Användarhantering",
+    "user": "68f7216c-b9ca-496d-9850-c746459c88"
 }
 
 ###
@@ -23,3 +31,24 @@ Content-Type: application/json
 }
 
 ###
+// SKAPA NY ANVÄNDARE
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "email": "janne@test.nu",
+    "password": "test"
+}
+
+###
+
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email": "janne@test.com",
+    "password": "test"
+}
+
+###
+

@@ -4,6 +4,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require("cors");
 
+const userRoute = require("./routes/users");
+
 var app = express();
 
 app.use(cors());
@@ -13,11 +15,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use("/user", userRoute);
+
 let todos = [
-    {id: 1, todo: "Hämta alla todos", done: false},
-    {id: 2, todo: "Lägg till nya todos", done: false},
-    {id: 3, todo: "Bocka en todo som klar", done: false}
-]
+    {"id": 1,
+"todo": "Användarhantering",
+"done": false,
+"user": "68f7216c-b9ca-496d-9850-c746459c8812"}
+];
+
+//
+// TODOS
+//
 
 app.get("/test/:name", (req, res) => {
     
@@ -32,6 +41,14 @@ app.get("/todo", (req, res) => {
     res.json(leftTodo)
 })
 
+app.get("/todo/:user", (req, res) => {
+
+    let user = req.params.user;
+    let leftTodo = todos.filter(todo => todo.done == false && todo.user == user);
+
+    res.json(leftTodo)
+})
+
 app.post("/todo", (req, res) => {
     // TA EMOT BODY, SPARA NY TODO
 
@@ -41,7 +58,8 @@ app.post("/todo", (req, res) => {
     let newTodo = {
         id: todos.length + 1,
         todo: addTodo.todo,
-        done: false
+        done: false,
+        user: addTodo.user
     }
 
     todos.push(newTodo)
