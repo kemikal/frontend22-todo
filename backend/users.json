@@ -1,0 +1,17 @@
+[
+    {
+        "email": "janne@test.nu",
+        "password": "test",
+        "id": "23110484-0a87-43c9-9ae3-0a6bc390fe5e"
+    },
+    {
+        "email": "kalle@test.nu",
+        "password": "test",
+        "id": "029bc517-1075-43a7-a717-eae353a075aa"
+    },
+    {
+        "email": "janne@test.com",
+        "password": "test",
+        "id": "1f0138c5-7077-4f4a-add7-4712d2e08ba6"
+    }
+]

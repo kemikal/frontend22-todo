@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "todo": "Spara todos",
+        "done": false,
+        "user": "029bc517-1075-43a7-a717-eae353a075aa"
+    },
+    {
+        "id": 2,
+        "todo": "Låt dem leva!",
+        "done": false,
+        "user": "029bc517-1075-43a7-a717-eae353a075aa"
+    },
+    {
+        "id": 3,
+        "todo": "jannes todos",
+        "done": false,
+        "user": "23110484-0a87-43c9-9ae3-0a6bc390fe5e"
+    },
+    {
+        "id": 4,
+        "todo": "Klicka färdig",
+        "done": true,
+        "user": "029bc517-1075-43a7-a717-eae353a075aa"
+    }
+]
