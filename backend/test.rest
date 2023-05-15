@@ -36,8 +36,8 @@ POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-    "email": "janne@test.com",
-    "password": "test"
+    "email": "ruben@marsvin.com",
+    "password": "ruben"
 }
 
 ###
@@ -52,3 +52,8 @@ Content-Type: application/json
 
 ###
 
+
+GET http://localhost:3000/user/
+
+
+###

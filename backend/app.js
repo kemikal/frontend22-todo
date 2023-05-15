@@ -4,11 +4,21 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require("cors");
 const fs = require("fs");
+require('dotenv').config();
 
 const userRoute = require("./routes/users");
 const { fstat } = require('fs');
 
 var app = express();
+
+const MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect(process.env.MONGODB_URI, {useUnifiedTopology: true})
+.then( client => {
+  console.log("Ansluten till databasen!")
+  const db = client.db(process.env.DB_NAME)
+  app.locals.db = db;
+}) 
 
 app.use(cors());
 app.use(logger('dev'));
