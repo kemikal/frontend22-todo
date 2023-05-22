@@ -32,11 +32,11 @@ Content-Type: application/json
 
 ###
 // SKAPA NY ANVÄNDARE
-POST http://localhost:3000/user
+POST https://coral-app-k4emb.ondigitalocean.app/user
 Content-Type: application/json
 
 {
-    "email": "ruben@marsvin.com",
+    "email": "kalle@mail.com",
     "password": "ruben"
 }
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:3000/user/
+GET http://localhost:3000/user/?apikey=123456&email=janne@admin.com
 
 
 ###

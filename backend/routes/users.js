@@ -8,11 +8,20 @@ const crypto = require("crypto-js");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+
+  console.log("query params", req.query);
+
+  if (req.query.apikey == "123456") {
+
   req.app.locals.db.collection("users").find().toArray()
   .then( result => {
    console.log("resultat från databasen", result)
    res.json(result)
   })
+
+  } else {
+  res.status(401).json({mess: "Wrong api key"})
+  }
 });
 
 router.post("/", (req, res) => {
